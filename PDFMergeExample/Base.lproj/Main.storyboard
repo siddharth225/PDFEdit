@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pac-yR-zd1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Split-->
+        <scene sceneID="sPa-Q6-Une">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Split" id="grA-tV-0rB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VE6-nX-W9n"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Mq-iK-OSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-445" y="-348"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="fMv-oq-0EU">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="Pac-yR-zd1" customClass="MainViewController" customModule="PDFMergeExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H2a-U1-6xa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uv5-yK-S0R">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="v9i-sy-fPW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellData" rowHeight="70" id="zcv-qI-uY7" customClass="cellData" customModule="PDFMergeExample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zcv-qI-uY7" id="MUS-mW-SRe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeI-Rp-NuX">
+                                                    <rect key="frame" x="20" y="10" width="394" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yeI-Rp-NuX" secondAttribute="trailing" id="ANL-x0-sZB"/>
+                                                <constraint firstItem="yeI-Rp-NuX" firstAttribute="top" secondItem="MUS-mW-SRe" secondAttribute="top" constant="10" id="THF-Wq-1r8"/>
+                                                <constraint firstAttribute="bottom" secondItem="yeI-Rp-NuX" secondAttribute="bottom" constant="10" id="arS-NO-5O9"/>
+                                                <constraint firstItem="yeI-Rp-NuX" firstAttribute="leading" secondItem="MUS-mW-SRe" secondAttribute="leading" constant="20" id="mY9-SM-i0a"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblData" destination="yeI-Rp-NuX" id="5gO-Be-gLg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pac-yR-zd1" id="0po-Dt-9fk"/>
+                                    <outlet property="delegate" destination="Pac-yR-zd1" id="Un4-7h-XZ4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Uv5-yK-S0R" firstAttribute="trailing" secondItem="J4b-1g-Pzf" secondAttribute="trailing" id="Cmg-aT-PzE"/>
+                            <constraint firstAttribute="bottom" secondItem="Uv5-yK-S0R" secondAttribute="bottom" id="btw-OP-JgX"/>
+                            <constraint firstItem="Uv5-yK-S0R" firstAttribute="top" secondItem="H2a-U1-6xa" secondAttribute="top" id="kEi-Uq-GWh"/>
+                            <constraint firstItem="Uv5-yK-S0R" firstAttribute="leading" secondItem="J4b-1g-Pzf" secondAttribute="leading" id="zR7-xo-Vap"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J4b-1g-Pzf"/>
+                    </view>
+                    <connections>
+                        <outlet property="tblData" destination="Uv5-yK-S0R" id="xyc-fk-eig"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="segueMerge" id="Pv6-OB-q7p"/>
+                        <segue destination="grA-tV-0rB" kind="show" identifier="segueSplit" id="xS4-go-85s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6Y-su-6oa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642.02898550724638" y="138.61607142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PDFMergeExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-84-POe" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89h-Z2-KE5" customClass="PDFThumbnailView">
+                                <rect key="frame" x="0.0" y="722" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Zsk-VB-Gnz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hCF-84-POe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4dA-DI-QF9"/>
+                            <constraint firstItem="89h-Z2-KE5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="74C-v7-NIm"/>
+                            <constraint firstItem="hCF-84-POe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eS9-qA-1cm"/>
+                            <constraint firstItem="hCF-84-POe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fR3-Py-bGF"/>
+                            <constraint firstItem="89h-Z2-KE5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oO5-LM-CTH"/>
+                            <constraint firstAttribute="bottom" secondItem="89h-Z2-KE5" secondAttribute="bottom" constant="20" id="qdH-j4-PiC"/>
+                            <constraint firstItem="89h-Z2-KE5" firstAttribute="top" secondItem="hCF-84-POe" secondAttribute="bottom" id="rL3-jl-SRn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="88g-Yy-saA"/>
+                    <connections>
+                        <outlet property="thumbnailView" destination="89h-Z2-KE5" id="Ppx-9q-FbC"/>
+                        <outlet property="viewPDF" destination="hCF-84-POe" id="bIq-MY-PjB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
