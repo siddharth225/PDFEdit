@@ -88,7 +88,7 @@
                                                                 <constraint firstAttribute="height" constant="34" id="a3G-0V-Jad"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             <connections>
                                                                 <action selector="txtStartRange:" destination="Kzl-u4-BJ8" eventType="editingDidEnd" id="vDJ-6n-vPw"/>
                                                             </connections>
@@ -102,7 +102,7 @@
                                                                 <constraint firstAttribute="width" constant="64" id="s8Q-ow-xIn"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qx-AB-itq">
                                                             <rect key="frame" x="91" y="24.5" width="28" height="21"/>
@@ -176,12 +176,13 @@
                         <viewLayoutGuide key="safeArea" id="qOQ-ii-3Uc"/>
                     </view>
                     <connections>
+                        <outlet property="pdfView" destination="43U-MM-dSm" id="hhi-Lh-1az"/>
                         <outlet property="tblViewRange" destination="zqB-UH-7oC" id="RfC-UH-gTc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGc-H9-BhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186.95652173913044" y="178.79464285714286"/>
+            <point key="canvasLocation" x="-90" y="105"/>
         </scene>
     </scenes>
     <resources>

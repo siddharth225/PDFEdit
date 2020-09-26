@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PDFKit
 
 struct PDFRange {
     var startPage: Int = 0
@@ -16,9 +17,19 @@ struct PDFRange {
 class SplitViewController: UIViewController {
 
     @IBOutlet weak var tblViewRange: UITableView!
-    var arrRange: [PDFRange] = [PDFRange(startPage: 0, endRange: 1)]
+    @IBOutlet weak var pdfView: PDFView!
+    var arrRange: [PDFRange] = []
+    var document: PDFDocument?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let path2 = Bundle.main.url(forResource: "2", withExtension: "pdf") else { return }
+        document = PDFDocument(url: path2)
+        arrRange.append(PDFRange(startPage: 1, endRange: 2))
+        pdfView.document = document
+        pdfView.displayMode = .singlePage
+        pdfView.autoScales = true
+        pdfView.displayDirection = .vertical
         self.tblViewRange.reloadData()
 
         // Do any additional setup after loading the view.
@@ -35,7 +46,12 @@ class SplitViewController: UIViewController {
     */
 
     @IBAction func btnTappedAdd(_ sender: UIButton) {
-        arrRange.append(PDFRange(startPage: arrRange.last!.startPage+1, endRange: arrRange.last!.startPage+2))
+//        if arrRange.last!.endRange<document!.pageCount {
+//            arrRange.append(PDFRange(startPage: arrRange.last!.endRange+1, endRange: document!.pageCount))
+//        } else {
+//            arrRange.append(PDFRange(startPage: arrRange.last!.endRange, endRange: document!.pageCount))
+//        }
+        arrRange.append(PDFRange(startPage: arrRange.last!.endRange<document!.pageCount ? arrRange.last!.endRange+1 : arrRange.last!.endRange, endRange: document!.pageCount))
         self.tblViewRange.reloadData()
     }
 }
