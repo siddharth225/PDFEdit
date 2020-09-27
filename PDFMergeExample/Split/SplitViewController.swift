@@ -46,12 +46,11 @@ class SplitViewController: UIViewController {
     */
 
     @IBAction func btnTappedAdd(_ sender: UIButton) {
-//        if arrRange.last!.endRange<document!.pageCount {
-//            arrRange.append(PDFRange(startPage: arrRange.last!.endRange+1, endRange: document!.pageCount))
-//        } else {
-//            arrRange.append(PDFRange(startPage: arrRange.last!.endRange, endRange: document!.pageCount))
-//        }
-        arrRange.append(PDFRange(startPage: arrRange.last!.endRange<document!.pageCount ? arrRange.last!.endRange+1 : arrRange.last!.endRange, endRange: document!.pageCount))
+        if arrRange.count<document!.pageCount {
+            arrRange.append(PDFRange(startPage: arrRange.last!.endRange<document!.pageCount ? arrRange.last!.endRange+1 : arrRange.last!.endRange, endRange: document!.pageCount))
+        } else {
+            
+        }
         self.tblViewRange.reloadData()
     }
 }
@@ -61,8 +60,15 @@ extension SplitViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: splitTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellSplit") as! splitTableViewCell
-        cell.txtStartRange.text = "\(self.arrRange[indexPath.row].startPage)"
-        cell.txtEndRange.text = "\(self.arrRange[indexPath.row].endRange)"
+//        cell.txtStartRange.text = "\(self.arrRange[indexPath.row].startPage)"
+//        cell.txtEndRange.text = "\(self.arrRange[indexPath.row].endRange)"
+        cell.loadData()
+        cell.deleteRecord = {
+            if indexPath.row != 0 {
+                self.arrRange.remove(at: indexPath.row)
+                self.tblViewRange.reloadData()
+            }
+        }
         return cell
     }
 }

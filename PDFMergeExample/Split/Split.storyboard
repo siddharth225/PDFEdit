@@ -10,7 +10,7 @@
         <!--Split View Controller-->
         <scene sceneID="ZYP-Ee-vi1">
             <objects>
-                <viewController storyboardIdentifier="SplitViewController" id="6g4-Rf-HrV" customClass="SplitViewController" customModule="PDFMergeExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplitViewController" wantsFullScreenLayout="YES" id="6g4-Rf-HrV" customClass="SplitViewController" customModule="PDFMergeExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mb0-ja-Vxh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,6 +136,9 @@
                                                     <state key="normal" image="minus.circle" catalog="system">
                                                         <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="btnDeleteRecord:" destination="Kzl-u4-BJ8" eventType="touchUpInside" id="FXP-iO-myG"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
