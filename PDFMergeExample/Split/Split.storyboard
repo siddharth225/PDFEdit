@@ -41,7 +41,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bF6-z7-ANh">
-                                            <rect key="frame" x="312" y="10.5" width="70" height="27"/>
+                                            <rect key="frame" x="1" y="10.5" width="70" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="r3V-4k-5w6"/>
                                                 <constraint firstAttribute="width" constant="70" id="yOO-GF-7U2"/>
@@ -53,11 +53,26 @@
                                                 <action selector="btnTappedAdd:" destination="6g4-Rf-HrV" eventType="touchUpInside" id="ri3-FY-onF"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojF-2v-Q4x">
+                                            <rect key="frame" x="329" y="10.5" width="70" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="BFy-5H-WD3"/>
+                                                <constraint firstAttribute="width" constant="70" id="T5C-Yi-zOM"/>
+                                            </constraints>
+                                            <state key="normal" title="Done">
+                                                <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnDone:" destination="6g4-Rf-HrV" eventType="touchUpInside" id="4Uv-GT-XDq"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="bF6-z7-ANh" secondAttribute="trailing" constant="32" id="Oh2-AP-fIZ"/>
+                                        <constraint firstItem="ojF-2v-Q4x" firstAttribute="centerY" secondItem="bF6-z7-ANh" secondAttribute="centerY" id="JJJ-JC-Mtl"/>
+                                        <constraint firstAttribute="trailing" secondItem="ojF-2v-Q4x" secondAttribute="trailing" constant="15" id="QBx-mD-gk9"/>
                                         <constraint firstItem="bF6-z7-ANh" firstAttribute="centerY" secondItem="I1E-zw-bBS" secondAttribute="centerY" id="a8s-Ul-Kyx"/>
+                                        <constraint firstItem="bF6-z7-ANh" firstAttribute="leading" secondItem="I1E-zw-bBS" secondAttribute="leading" constant="1" id="c8F-OZ-ibs"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -90,7 +105,7 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             <connections>
-                                                                <action selector="txtStartRange:" destination="Kzl-u4-BJ8" eventType="editingDidEnd" id="vDJ-6n-vPw"/>
+                                                                <outlet property="delegate" destination="6g4-Rf-HrV" id="3OG-rt-Z8m"/>
                                                             </connections>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWT-eR-taz">
@@ -103,6 +118,9 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="6g4-Rf-HrV" id="Us1-n8-r12"/>
+                                                            </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qx-AB-itq">
                                                             <rect key="frame" x="91" y="24.5" width="28" height="21"/>

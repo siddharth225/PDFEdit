@@ -21,6 +21,7 @@
 		356B728D25112F9A00C92E54 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B728C25112F9A00C92E54 /* MainViewController.swift */; };
 		35AD6CB025127BF200DC57F3 /* Split.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35AD6CAF25127BF200DC57F3 /* Split.storyboard */; };
 		35AD6CB225127C0B00DC57F3 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AD6CB125127C0B00DC57F3 /* SplitViewController.swift */; };
+		35CF4A8B2529C1B700C33E5D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CF4A8A2529C1B700C33E5D /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		356B728C25112F9A00C92E54 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		35AD6CAF25127BF200DC57F3 /* Split.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Split.storyboard; sourceTree = "<group>"; };
 		35AD6CB125127C0B00DC57F3 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		35CF4A8A2529C1B700C33E5D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		354757DE2509411B006F4E83 /* PDFMergeExample */ = {
 			isa = PBXGroup;
 			children = (
+				35CF4A892529C1A500C33E5D /* Common */,
 				35AD6CAE25127BBC00DC57F3 /* Split */,
 				356B728E25112FBC00C92E54 /* ViewControllers */,
 				354757F625094493006F4E83 /* PDFs */,
@@ -130,6 +133,14 @@
 				35AD6CB125127C0B00DC57F3 /* SplitViewController.swift */,
 			);
 			path = Split;
+			sourceTree = "<group>";
+		};
+		35CF4A892529C1A500C33E5D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				35CF4A8A2529C1B700C33E5D /* Common.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 			files = (
 				356314F22513D44200151D40 /* splitTableViewCell.swift in Sources */,
 				35AD6CB225127C0B00DC57F3 /* SplitViewController.swift in Sources */,
+				35CF4A8B2529C1B700C33E5D /* Common.swift in Sources */,
 				354757E42509411B006F4E83 /* ViewController.swift in Sources */,
 				354757E02509411B006F4E83 /* AppDelegate.swift in Sources */,
 				354757E22509411B006F4E83 /* SceneDelegate.swift in Sources */,

@@ -45,14 +45,8 @@ class SplitViewController: UIViewController {
     }
     */
 
-    @IBAction func btnTappedAdd(_ sender: UIButton) {
-        if arrRange.count<document!.pageCount {
-            arrRange.append(PDFRange(startPage: arrRange.last!.endRange<document!.pageCount ? arrRange.last!.endRange+1 : arrRange.last!.endRange, endRange: document!.pageCount))
-        } else {
-            
-        }
-        self.tblViewRange.reloadData()
-    }
+   
+    
 }
 extension SplitViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,8 +54,8 @@ extension SplitViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: splitTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellSplit") as! splitTableViewCell
-//        cell.txtStartRange.text = "\(self.arrRange[indexPath.row].startPage)"
-//        cell.txtEndRange.text = "\(self.arrRange[indexPath.row].endRange)"
+        cell.txtStartRange.text = "\(self.arrRange[indexPath.row].startPage)"
+        cell.txtEndRange.text = "\(self.arrRange[indexPath.row].endRange)"
         cell.loadData()
         cell.deleteRecord = {
             if indexPath.row != 0 {
@@ -69,6 +63,35 @@ extension SplitViewController: UITableViewDataSource {
                 self.tblViewRange.reloadData()
             }
         }
+        cell.selectionStyle = .none
         return cell
+    }
+}
+extension SplitViewController {
+    @IBAction func btnTappedAdd(_ sender: UIButton) {
+        if arrRange.count<document!.pageCount {
+            arrRange.append(PDFRange(startPage: arrRange.last!.endRange<document!.pageCount ? arrRange.last!.endRange+1 : arrRange.last!.endRange, endRange: document!.pageCount))
+        }
+        self.tblViewRange.reloadData()
+    }
+    
+    @IBAction func btnDone(_ sender: UIButton) {
+        if let folder = common.shared.createFolder(folderName: "PDF_1") as? URL {
+            print(folder)
+        }
+    }
+}
+extension SplitViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print(document!.pageCount)
+        if !string.isEmpty {
+            if range ==  NSRange(location: 0, length: 0) {
+                if string == " " || Int(string) == 0 {
+                   return false
+                }
+            }
+            return !(Int(string)!>document!.pageCount)
+        }
+        return true
     }
 }

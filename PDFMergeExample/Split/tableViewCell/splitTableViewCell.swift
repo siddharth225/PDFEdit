@@ -34,7 +34,7 @@ class splitTableViewCell: UITableViewCell {
         guard let tableview = self.superview  as? UITableView else {
             return
         }
-
+        
         if let indexPath = tableview.indexPath(for: cell) {
             self.txtStartRange.text = "\(self.arrRange[indexPath.row].startPage)"
             self.txtEndRange.text = "\(self.arrRange[indexPath.row].endRange)"
@@ -45,3 +45,4 @@ class splitTableViewCell: UITableViewCell {
         deleteRecord!()
     }
 }
+
