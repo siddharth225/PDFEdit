@@ -27,26 +27,50 @@ class common: NSObject {
         return dataPath
     }
     func save(text: Data, toDirectory directory: String, withFileName fileName: String) {
-        guard let filePath = self.append(toPath: directory, withPathComponent: fileName) else {
-            return
+        if let filePath = getDocumentsDirectory().appendingPathComponent(directory).appendingPathComponent(fileName) as? URL {
+            print(filePath.absoluteString)
+            do {
+                print(filePath.absoluteString)
+                try text.write(to: filePath, options: .atomic)
+            } catch {
+                print("Error", error)
+                return
+            }
+            print("Save successful")
         }
-        do {
-            try text.write(to: filePath, options: .atomic)
-        } catch {
-            print("Error", error)
-            return
-        }
-        
-        print("Save successful")
     }
-    private func append(toPath path: String, withPathComponent pathComponent: String) -> URL? {
-        if var pathURL = URL(string: path) {
-            pathURL.appendPathComponent(pathComponent)
-            return pathURL
-        }
-        
-        return nil
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
     }
+//    func getA4Compress(pdfData:Data,url: URL) -> Data {
+//        let pdf = CGPDFDocument(url as NSURL)
+//        let page = (pdf?.page(at: 1))!
+//        let frame = page.getBoxRect(.mediaBox)
+//
+//        if frame.width >= 595.2 {
+//
+//            let pageRect = CGRect(x: 0, y: 0, width: 595.2, height: 841.8)
+//            let renderer = UIGraphicsPDFRenderer(bounds: pageRect)
+//            let data = renderer.pdfData { (context) in
+//
+//                for i in 1...pdf!.numberOfPages {
+//                    context.beginPage()
+//                    let page = (pdf?.page(at: i))!
+//                    let pageFrame = CGRect(x: 0, y: 0, width: 595.2, height: 841.8)
+//                    context.cgContext.saveGState()
+//                    context.cgContext.scaleBy(x: 1, y: -1)
+//                    context.cgContext.translateBy(x: 0, y: -pageFrame.size.height)
+//                    context.cgContext.concatenate(page.getDrawingTransform(.mediaBox, rect: pageFrame, rotate: 0, preserveAspectRatio: true))
+//                    context.cgContext.drawPDFPage(page)
+//                    context.cgContext.restoreGState()
+//                }
+//            }
+//            return data
+//        }
+//        return pdfData
+//    }
 }
 
 

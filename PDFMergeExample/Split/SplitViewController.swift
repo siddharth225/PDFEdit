@@ -9,9 +9,13 @@
 import UIKit
 import PDFKit
 
-struct PDFRange {
+class PDFRange {
     var startPage: Int = 0
     var endRange: Int = 1
+    init(startPage: Int,endRange: Int) {
+       self.startPage = startPage
+       self.endRange = endRange
+    }
 }
 
 class SplitViewController: UIViewController {
@@ -56,6 +60,8 @@ extension SplitViewController: UITableViewDataSource {
         let cell: splitTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellSplit") as! splitTableViewCell
         cell.txtStartRange.text = "\(self.arrRange[indexPath.row].startPage)"
         cell.txtEndRange.text = "\(self.arrRange[indexPath.row].endRange)"
+        cell.txtStartRange.tag = indexPath.row
+        cell.txtEndRange.tag = indexPath.row
         cell.loadData()
         cell.deleteRecord = {
             if indexPath.row != 0 {
@@ -76,9 +82,20 @@ extension SplitViewController {
     }
     
     @IBAction func btnDone(_ sender: UIButton) {
+        self.view.endEditing(true)
         if let folder = common.shared.createFolder(folderName: "PDF_1") as? URL {
             print(folder)
+            _ = self.arrRange.map({self.writePDF(range: $0)})
         }
+    }
+    func writePDF(range: PDFRange)  {
+        let documentWrite: PDFDocument = PDFDocument()
+        var index: Int = 0
+        for linkIndex in (range.startPage-1)..<range.endRange {
+            documentWrite.insert(document!.page(at: linkIndex)!, at: index)
+            index += 1
+        }
+        common.shared.save(text: documentWrite.dataRepresentation()!, toDirectory: "PDF_1", withFileName: "Range_\(range.startPage)_\(range.endRange).pdf")
     }
 }
 extension SplitViewController: UITextFieldDelegate {
@@ -93,5 +110,17 @@ extension SplitViewController: UITextFieldDelegate {
             return !(Int(string)!>document!.pageCount)
         }
         return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let index: Int = textField.tag
+        if let cell = self.tblViewRange.cellForRow(at: IndexPath(row: index, section: 0)) as? splitTableViewCell {
+            if cell.txtStartRange == textField {
+                var range = self.arrRange[textField.tag]
+                range.startPage = Int(textField.text!)!
+            } else {
+                var range = self.arrRange[textField.tag]
+                range.endRange = Int(textField.text!)!
+            }
+        }
     }
 }
