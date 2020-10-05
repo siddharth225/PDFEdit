@@ -83,8 +83,13 @@ extension SplitViewController {
     
     @IBAction func btnDone(_ sender: UIButton) {
         self.view.endEditing(true)
-        if let folder = common.shared.createFolder(folderName: "PDF_1") as? URL {
+        if let folder = common.shared.createFolder(folderName: "PDF_1") as? String {
             print(folder)
+            for obj in self.arrRange{
+                print("=============================")
+                print("Startrange \(obj.startPage)")
+                print("Endrange \(obj.endRange)")
+            }
             _ = self.arrRange.map({self.writePDF(range: $0)})
         }
     }
@@ -115,10 +120,10 @@ extension SplitViewController: UITextFieldDelegate {
         let index: Int = textField.tag
         if let cell = self.tblViewRange.cellForRow(at: IndexPath(row: index, section: 0)) as? splitTableViewCell {
             if cell.txtStartRange == textField {
-                var range = self.arrRange[textField.tag]
+                let range = self.arrRange[textField.tag]
                 range.startPage = Int(textField.text!)!
             } else {
-                var range = self.arrRange[textField.tag]
+                let range = self.arrRange[textField.tag]
                 range.endRange = Int(textField.text!)!
             }
         }

@@ -12,7 +12,7 @@ import Foundation
 class common: NSObject {
     static let shared = common()
     
-    func createFolder(folderName: String) -> URL {
+    func createFolder(folderName: String) -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0]
         let docURL = URL(string: documentsDirectory)!
@@ -24,7 +24,7 @@ class common: NSObject {
                 print(error.localizedDescription);
             }
         }
-        return dataPath
+        return dataPath.absoluteString
     }
     func save(text: Data, toDirectory directory: String, withFileName fileName: String) {
         if let filePath = getDocumentsDirectory().appendingPathComponent(directory).appendingPathComponent(fileName) as? URL {

@@ -17,6 +17,16 @@
             </objects>
             <point key="canvasLocation" x="-445" y="-348"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="9qB-fb-bBL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="f3q-12-fzR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DMD-iF-EQ9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlG-fa-tEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-73" y="-331"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="fMv-oq-0EU">
             <objects>
@@ -79,11 +89,12 @@
                         <outlet property="tblData" destination="Uv5-yK-S0R" id="xyc-fk-eig"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="segueMerge" id="Pv6-OB-q7p"/>
                         <segue destination="grA-tV-0rB" kind="show" identifier="segueSplit" id="xS4-go-85s"/>
+                        <segue destination="f3q-12-fzR" kind="show" identifier="SearchText" id="5rL-H2-Tfe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6Y-su-6oa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642.02898550724638" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-907" y="122"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3545CD86252B854D0078362F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3545CD85252B854D0078362F /* Search.storyboard */; };
+		3545CD88252B86EC0078362F /* SearchTextVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545CD87252B86EC0078362F /* SearchTextVc.swift */; };
 		354757E02509411B006F4E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354757DF2509411B006F4E83 /* AppDelegate.swift */; };
 		354757E22509411B006F4E83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354757E12509411B006F4E83 /* SceneDelegate.swift */; };
 		354757E42509411B006F4E83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354757E32509411B006F4E83 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3545CD85252B854D0078362F /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		3545CD87252B86EC0078362F /* SearchTextVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextVc.swift; sourceTree = "<group>"; };
 		354757DC2509411B006F4E83 /* PDFMergeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFMergeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354757DF2509411B006F4E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		354757E12509411B006F4E83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3545CD84252B853A0078362F /* SearchText */ = {
+			isa = PBXGroup;
+			children = (
+				3545CD85252B854D0078362F /* Search.storyboard */,
+				3545CD87252B86EC0078362F /* SearchTextVc.swift */,
+			);
+			path = SearchText;
+			sourceTree = "<group>";
+		};
 		354757D32509411B006F4E83 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +89,7 @@
 		354757DE2509411B006F4E83 /* PDFMergeExample */ = {
 			isa = PBXGroup;
 			children = (
+				3545CD84252B853A0078362F /* SearchText */,
 				35CF4A892529C1A500C33E5D /* Common */,
 				35AD6CAE25127BBC00DC57F3 /* Split */,
 				356B728E25112FBC00C92E54 /* ViewControllers */,
@@ -206,6 +220,7 @@
 				354757FB250944B8006F4E83 /* 1.pdf in Resources */,
 				354757E92509411C006F4E83 /* Assets.xcassets in Resources */,
 				35AD6CB025127BF200DC57F3 /* Split.storyboard in Resources */,
+				3545CD86252B854D0078362F /* Search.storyboard in Resources */,
 				354757E72509411B006F4E83 /* Main.storyboard in Resources */,
 				354757FA250944B8006F4E83 /* 2.pdf in Resources */,
 			);
@@ -219,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356314F22513D44200151D40 /* splitTableViewCell.swift in Sources */,
+				3545CD88252B86EC0078362F /* SearchTextVc.swift in Sources */,
 				35AD6CB225127C0B00DC57F3 /* SplitViewController.swift in Sources */,
 				35CF4A8B2529C1B700C33E5D /* Common.swift in Sources */,
 				354757E42509411B006F4E83 /* ViewController.swift in Sources */,

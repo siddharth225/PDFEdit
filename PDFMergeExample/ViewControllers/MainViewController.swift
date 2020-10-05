@@ -9,7 +9,7 @@
 import UIKit
 
 enum PDFDemo: Int {
-    case Merge = 0, Edit, Split, SearchText
+    case Merge = 0, Edit, Split, SearchText, Reorder
     
     var caseText: String {
         return String(describing: self)
@@ -20,6 +20,10 @@ enum PDFDemo: Int {
             return "segueMerge"
         case .Split:
             return "segueSplit"
+        case .Reorder:
+            return "segueReorder"
+        case .SearchText:
+            return "SearchText"
         default:
             return "segueSplit"
         }

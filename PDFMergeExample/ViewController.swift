@@ -33,7 +33,7 @@ extension ViewController {
                 mainDoc.insert(document1.page(at: index)!, at: totalpage+index)
             }
         }
-        let matches: [PDFSelection] = mainDoc.findString("Create", withOptions: .caseInsensitive)
+        let matches: [PDFSelection] = mainDoc.findString("A Simple PDF File", withOptions: .caseInsensitive)
         print(matches)
         viewPDF.document = mainDoc
         viewPDF.displayMode = .singlePage

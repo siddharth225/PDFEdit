@@ -16,5 +16,69 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "838794BD-954B-4D7B-BA59-585F38C71A3D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PDFMergeExample/Split/SplitViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "btnDone(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "838794BD-954B-4D7B-BA59-585F38C71A3D - 23aab62c68f0b7d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PDFMergeExample.SplitViewController.btnDone(__C.UIButton) -&gt; ()"
+                  moduleName = "PDFMergeExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/siddharth/iOS%20Application/PDF%20Editor/PDFEdit/PDFMergeExample/Split/SplitViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "2250">
+               </Location>
+               <Location
+                  uuid = "838794BD-954B-4D7B-BA59-585F38C71A3D - fe95841acd9e4b84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PDFMergeExample.PDFRange) -&gt; () in PDFMergeExample.SplitViewController.btnDone(__C.UIButton) -&gt; ()"
+                  moduleName = "PDFMergeExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/siddharth/iOS%20Application/PDF%20Editor/PDFEdit/PDFMergeExample/Split/SplitViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C06BE66-4A40-4F0D-B70D-C85C1B747368"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PDFMergeExample/SearchText/SearchTextVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "textFieldDidChange(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
