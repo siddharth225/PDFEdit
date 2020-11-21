@@ -34,8 +34,13 @@ class SearchTextVc: UIViewController {
         if !sender.text!.isEmpty {
             let matches: [PDFSelection] = self.pdfDocument.findString(sender.text!, withOptions: .caseInsensitive)
             print(matches)
-//            let page: PDFPage = matches[0].pages[0]
-//            print(matches[0].pages.count)
+            if matches.count>0 {
+                if matches[0].pages.count>0 {
+                    let page: PDFPage = matches[0].pages[0]
+                    print(page.string)
+                    
+                }
+            }
         }
     }
     
